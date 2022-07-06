@@ -1,0 +1,53 @@
+FROM openanalytics/r-base
+
+MAINTAINER ________
+
+ENV TZ=Europe/London
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# system libraries of general use
+RUN apt-get update && apt-get install -y \
+    sudo \
+    pandoc \
+    pandoc-citeproc \
+    libcurl4-gnutls-dev \
+    libcairo2-dev \
+    libxt-dev \
+    libssl-dev \
+    libssh2-1-dev \
+    libxml2-dev \
+    libpq-dev \
+    html-xml-utils \
+    libv8-dev
+
+# system library dependency for the app
+
+RUN apt-get update
+ 
+RUN R -q -e "install.packages(c('V8'), repos = 'http://cloud.r-project.org')"    
+RUN R -q -e "install.packages(c('shiny'), repos = 'http://cloud.r-project.org')"    
+RUN R -q -e "install.packages(c('shinydashboard'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('DT'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('plotly'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('tidyverse'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('dplyr'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('shinyWidgets'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('httr'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('shinybusy'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('tictoc'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('shinyjs'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('stringi'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('Biostrings'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('matrixStats'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('shinycssloaders'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('shinyalert'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('shinyBS'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('ggplot2'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('shinythemes'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('tidyr'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('dplyr'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('devtools'), repos = 'http://cloud.r-project.org')"
+RUN R -q -e "install.packages(c('data.table'), repos = 'http://cloud.r-project.org')"
+
+#sudo docker build --tag=gkoulouras/proteincleaver-packages:1.0.0 -f Dockerfile-base .
+

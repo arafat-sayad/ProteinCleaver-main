@@ -1,0 +1,108 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-default {
+    background-color: #b1b1b3;
+}
+
+.navbar-default:hover {
+    background-color: #aaaaaa;
+    color: yellow;
+}
+
+.radio-inline, .checkbox-inline  {
+    margin-right: 100px; 
+}
+
+.swal-modal .swal-text {
+    text-align: center;
+}
+
+/*#shiny-notification-panel {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 450px;
+}*/
+
+.nav li a.disabled {
+  background-color: #aaa !important;
+  color: #333 !important;
+  cursor: not-allowed !important;
+  border-color: #aaa !important;
+}
+
+#cruklogodiv {
+    /*position: fixed;
+    bottom: 0;
+    left: 0;*/
+    position:absolute;
+    bottom:0;
+    width:100%;
+    /*  height:50px;   /* Height of the footer */
+    color: white;
+    padding: 8px;
+    /* background-color: black; */
+    z-index: 1000;
+  }
+  
+.btn-danger
+{
+ 
+background-color: hsl(351, 68%, 11%) !important;
+background-repeat: repeat-x;
+background-image: -o-linear-gradient(top, #d12741, #63111e);
+background-image: linear-gradient(#d12741, #63111e);
+border-color: #63111e #63111e hsl(351, 68%, 1.5%);
+color: #fff !important;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.62);
+}
+ 
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
+background-color: hsl(360, 68%, 60%) !important;
+background-repeat: repeat-x;
+background-image: linear-gradient(#fbeded, #de5353);
+border-color: #de5353 #de5353 hsl(360, 68%, 51%);
+color: #333 !important;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.59);
+}
+
+.selectize-dropdown {
+  top: -200px !important;
+}
+
+/*div.vrtc-tab-panel-container {
+  background-color: #ecf0f5;
+}*/
+
+.btn-custom {
+  background-color: #182a4b !important;
+  color: #ffffff !important;
+}
+
+.btn-custom:hover {
+  background-color: #337ab7 !important;
+  color: #ffffff !important;
+}
+
+.version-div {
+    position:relative;
+}
+
+.version-p {
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+.footerdiv {
+  font-size:12px !important;
+}
+
+table.dataTable tbody tr.selected {
+  /*pointer-events: none;*/
+}
